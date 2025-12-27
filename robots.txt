@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://killzonefx.netlify.app/sitemap.xml

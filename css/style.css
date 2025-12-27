@@ -1,0 +1,630 @@
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    background: #0d1117;
+    color: #e6edf3;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    margin: 0 0 10px;
+  }
+
+  button {
+    background: #21262d;
+    color: #e6edf3;
+    border: 1px solid #30363d;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  button:hover {
+    background: #30363d;
+  }
+
+  #utc {
+    margin-bottom: 20px;
+    color: #8b949e;
+  }
+
+  .session {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #161b22;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    transition: 0.2s;
+  }
+
+  .open {
+    color: #3fb950;
+    font-weight: bold;
+  }
+
+  .closed {
+    color: #f85149;
+    font-weight: bold;
+  }
+
+  .bar {
+    background: #30363d;
+    height: 6px;
+    border-radius: 6px;
+    margin-top: 6px;
+    overflow: hidden;
+  }
+
+  .fill {
+    height: 100%;
+    background: var(--c, #3fb950);
+  }
+
+  .overlap {
+    border: 1px solid #f0b90b;
+    box-shadow: 0 0 12px rgba(240,185,11,0.25);
+  }
+
+  .overlap-label {
+    color: #f0b90b;
+    font-size: 12px;
+    margin-left: 6px;
+  }
+
+  /* session colors */
+  .sydney { --c: #8b5cf6; }
+  .tokyo { --c: #06b6d4; }
+  .london { --c:#22c55e; }
+  .newyork { --c: #f97316; }
+
+  /* timeline */
+  #timeline {
+    position: relative;
+    background: #161b22;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 10px;
+  }
+
+  .time-row {
+    position: relative;
+    height: 18px;
+    background: #30363d;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+
+  .time-fill {
+    position: absolute;
+    height: 100%;
+    border-radius: 6px;
+    background: var(--c);
+position: relative;
+  overflow: hidden;
+  position: absolute;   /* 👈 critical */
+  top: 0;
+  height: 100%;
+
+  }
+
+  
+
+  .hour {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #30363d;
+  }
+
+  .hour-label {
+    position: absolute;
+    top: -16px;
+    font-size: 10px;
+    color: #8b949e;
+  }
+
+  @media (max-width: 600px) {
+    .session {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+
+footer {
+  margin-top: 40px;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ===== RED NOW LINE & LABEL ===== */
+.now-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #f85149; /* Babypips-style red */
+  z-index: 10;
+  cursor: ew-resize;
+  transition: left 0.1s ease;
+    width: 2px;
+}
+
+#now-label {
+  position: absolute;
+  top: -20px;
+  color: #f85149;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  z-index: 15;
+}
+
+
+/* base */
+.time-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 6px;
+}
+
+/* when split across midnight */
+.time-fill.split-left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.time-fill.split-right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.now-line {
+  touch-action: none;
+  cursor: ew-resize;
+}
+
+#faq {
+  margin-top: 30px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: #161b22;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: #21262d;
+  border: none;
+  color: #e6edf3;
+  text-align: left;
+  padding: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #30363d;
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #30363d;
+}
+
+.faq-answer {
+  padding: 10px 12px;
+  
+  font-size: 13px;
+  color: #8b949e;
+}
+
+.faq-answer {
+  max-height: 0;         /* collapsed */
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 12px;       /* top/bottom padding will be added when expanded */
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;     /* large enough for content */
+  padding: 10px 12px;    /* add vertical padding when open */
+}
+
+/* Most Active Session Badge */
+#active-badge {
+  background: linear-gradient(135deg, #26a300, #26a310);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin: 15px 0;
+  font-size: 15px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(26, 95, 180, 0.3);
+}
+
+#active-session-name {
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+/* ===== WEEKEND NOTICE ===== */
+#weekend-notice {
+  background: rgba(240, 185, 11, 0.15);
+  color: #f0b90b;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin: 10px 0 20px 0;
+  font-size: 14px;
+  border: 1px solid rgba(240, 185, 11, 0.3);
+}
+
+
+/* ===== LIGHT MODE STYLES ===== */
+body.light-mode {
+  background: #f8f9fa;
+  color: #24292f;
+}
+
+body.light-mode .session {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+}
+
+body.light-mode #timeline {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+}
+
+body.light-mode button {
+  background: #f6f8fa;
+  color: #24292f;
+  border: 1px solid #d0d7de;
+}
+
+body.light-mode .faq-item {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+}
+
+body.light-mode .faq-question {
+  background: #f6f8fa;
+  color: #24292f;
+  border-bottom: 1px solid #d0d7de;
+}
+
+body.light-mode #active-badge {
+  background: linear-gradient(135deg, #26a300, #26a310);
+  color: white;
+}
+
+body.light-mode #weekend-notice {
+  background: rgba(255, 149, 0, 0.15);
+  color: #d76b00;
+  border: 1px solid rgba(255, 149, 0, 0.3);
+}
+
+
+.now-line.dragging {
+  width: 3px;
+  background: #ff6b6b;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.7);
+}
+
+
+.session.open-session {
+  border-left: 4px solid var(--c);
+  background: linear-gradient(90deg, rgba(var(--c-rgb), 0.1) 0%, #161b22 100%);
+}
+
+/* ===== ECONOMIC CALENDAR ===== */
+#economic-calendar {
+  background: #161b22;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.calendar-event {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #30363d;
+}
+
+.calendar-event:last-child {
+  border-bottom: none;
+}
+
+.event-time {
+  color: #8b949e;
+  font-size: 14px;
+  min-width: 80px;
+}
+
+.event-currency {
+  display: inline-block;
+  background: #21262d;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.event-importance.high {
+  color: #f85149;
+  font-weight: bold;
+}
+
+.event-importance.medium {
+  color: #f0b90b;
+}
+
+.event-importance.low {
+  color: #3fb950;
+}
+
+.calendar-loading {
+  text-align: center;
+  color: #8b949e;
+  padding: 20px;
+}
+
+/* Light mode */
+body.light-mode #economic-calendar {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+}
+
+body.light-mode .calendar-event {
+  border-bottom: 1px solid #d0d7de;
+}
+
+body.light-mode .event-currency {
+  background: #f6f8fa;
+}
+
+/* ===== ECONOMIC CALENDAR ===== */
+#economic-calendar {
+  background: #161b22;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  min-height: 200px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #30363d;
+}
+
+.calendar-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.calendar-date {
+  color: #8b949e;
+  font-size: 14px;
+}
+
+.calendar-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #30363d;
+  transition: background 0.2s;
+}
+
+.calendar-event:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.calendar-event:last-child {
+  border-bottom: none;
+}
+
+.event-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.event-currency {
+  background: #21262d;
+  color: #e6edf3;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.event-details {
+  flex: 1;
+}
+
+.event-name {
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.event-country {
+  color: #8b949e;
+  font-size: 12px;
+}
+
+.event-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.event-time {
+  background: #0d1117;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #e6edf3;
+  min-width: 85px;
+  text-align: center;
+}
+
+.importance-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.importance-high {
+  background: rgba(248, 81, 73, 0.15);
+  color: #f85149;
+  border: 1px solid rgba(248, 81, 73, 0.3);
+}
+
+.importance-medium {
+  background: rgba(240, 185, 11, 0.15);
+  color: #f0b90b;
+  border: 1px solid rgba(240, 185, 11, 0.3);
+}
+
+.importance-low {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3fb950;
+  border: 1px solid rgba(63, 185, 80, 0.3);
+}
+
+.calendar-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #8b949e;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #30363d;
+  border-top: 3px solid #3fb950;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.calendar-empty {
+  text-align: center;
+  padding: 40px;
+  color: #8b949e;
+  font-style: italic;
+}
+
+/* Light Mode */
+body.light-mode #economic-calendar {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+}
+
+body.light-mode .calendar-header {
+  border-bottom: 1px solid #d0d7de;
+}
+
+body.light-mode .calendar-event {
+  border-bottom: 1px solid #e1e4e8;
+}
+
+body.light-mode .calendar-event:hover {
+  background: #f6f8fa;
+}
+
+body.light-mode .event-currency {
+  background: #f6f8fa;
+  color: #24292f;
+}
+
+body.light-mode .event-time {
+  background: #f6f8fa;
+  color: #24292f;
+}
+
+body.light-mode .importance-high {
+  background: rgba(248, 81, 73, 0.1);
+}
+
+body.light-mode .importance-medium {
+  background: rgba(240, 185, 11, 0.1);
+}
+
+body.light-mode .importance-low {
+  background: rgba(63, 185, 80, 0.1);
+}
+
+
+.refreshing {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+
+/* Better touch feedback */
+.now-line:active,
+.now-line.dragging {
+    width: 4px !important;
+    background: #ff6b6b !important;
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.7) !important;
+}
+
+/* Prevent text selection during drag */
+#timeline {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Larger hit area for mobile */
+@media (max-width: 768px) {
+    .now-line {
+        width: 3px !important;
+        margin-left: -1px; /* Center the line on touch */
+    }
+    
+    #now-label {
+        font-size: 14px !important;
+        top: -25px !important;
+    }
+}
+
+
