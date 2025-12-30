@@ -27,7 +27,7 @@ body {
 
   #utc {
     margin-bottom: 20px;
-    color: #8b949e;
+    color: #f6c121;
   }
 
   .session {
@@ -148,11 +148,11 @@ footer {
   position: absolute;
   top: 0;
   bottom: 0;
-  background: #f85149; /* Babypips-style red */
+  background: #f02828; /* Babypips-style red */
   z-index: 10;
   cursor: ew-resize;
   transition: left 0.1s ease;
-    width: 2px;
+    width: 3px;
 }
 
 #now-label {
@@ -229,7 +229,7 @@ footer {
 .faq-answer {
   max-height: 0;         /* collapsed */
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.1s ease, padding 0.3s ease;
   padding: 0 12px;       /* top/bottom padding will be added when expanded */
 }
 
@@ -242,7 +242,7 @@ footer {
 #active-badge {
   background: linear-gradient(135deg, #26a300, #26a310);
   color: white;
-  padding: 10px 16px;
+  padding: 10px 20px;
   border-radius: 10px;
   margin: 15px 0;
   font-size: 15px;
@@ -304,7 +304,7 @@ body.light-mode .faq-question {
 }
 
 body.light-mode #active-badge {
-  background: linear-gradient(135deg, #26a300, #26a310);
+  background: linear-gradient(135deg, #979797, #b4b3b4);
   color: white;
 }
 
@@ -315,9 +315,10 @@ body.light-mode #weekend-notice {
 }
 
 
+
 .now-line.dragging {
   width: 3px;
-  background: #ff6b6b;
+  background: #ff0000;
   box-shadow: 0 0 10px rgba(255, 107, 107, 0.7);
 }
 
@@ -547,6 +548,11 @@ body.light-mode .event-currency {
 }
 
 /* Light Mode */
+body.light-mode #tips{
+background: #ffffff;
+color: #ffffff;
+}
+
 body.light-mode #economic-calendar {
   background: #ffffff;
   border: 1px solid #e1e4e8;
@@ -597,34 +603,43 @@ body.light-mode .importance-low {
     100% { opacity: 1; }
 }
 
-
-/* Better touch feedback */
-.now-line:active,
-.now-line.dragging {
-    width: 4px !important;
-    background: #ff6b6b !important;
-    box-shadow: 0 0 15px rgba(255, 107, 107, 0.7) !important;
+/* Container for the calendar */
+#economic-calendar {
+    background: #ffffff;      /* White background for the card */
+    border: 1px solid #d1d5db; /* Soft grey border */
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Prevent text selection during drag */
-#timeline {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Larger hit area for mobile */
-@media (max-width: 768px) {
-    .now-line {
-        width: 3px !important;
-        margin-left: -1px; /* Center the line on touch */
-    }
-    
-    #now-label {
-        font-size: 14px !important;
-        top: -25px !important;
-    }
+/* Page heading for the calendar */
+#economic-calendar h2 {
+    color: #374151; /* Dark grey text */
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 
+/* This gives the widget its grey background */
+#calendar-wrapper {
+    background-color: #f2f2f2 !important; /* A clean, modern light grey */
+    border: 1px solid #d1d5db;           /* Subtle border to define the area */
+    border-radius: 12px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Optional: If you want a darker "Slate" grey, use this instead: */
+/* background-color: #e5e7eb; */
+
+
+#economic-calendar-container {
+    background-color: #21262d !important;
+    color: #ffffff !important;
+    border: 1px solid #30363d; /* This matches GitHub's dark border style */
+}
+
+/* Ensure the heading above the widget is also white */
+h2 {
+    color: #ffffff;
+}
