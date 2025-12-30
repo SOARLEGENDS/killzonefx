@@ -422,3 +422,10 @@ function startApp() {
     
     console.log("✅ All features started successfully!");
 }
+
+
+
+document.getElementById('buyCoffeeBtn').addEventListener('click', function() {
+  // Open the PayPal link in a new tab
+  window.open('https://paypal.me/manjurahmedbogee', '_blank');
+});
