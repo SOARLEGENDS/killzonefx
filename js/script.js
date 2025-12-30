@@ -262,7 +262,6 @@ function renderTimeline() {
 
 
 
-
 function updateClock() {
   const now = new Date();
   document.getElementById("utc").textContent = showLocal
@@ -298,8 +297,8 @@ function updateMostActiveSession() {
   else if (nowHour >= 13 && nowHour < 22) {
     activeSession = "New York";
   } 
-  // Sydney most active: 22:00-05:00 UTC
-  else if ((nowHour >= 22 && nowHour < 24) || (nowHour >= 0 && nowHour < 5)) {
+  // Sydney most active: 20:00-05:00 UTC
+  else if ((nowHour >= 20 && nowHour < 24) || (nowHour >= 0 && nowHour < 5)) {
     activeSession = "Sydney";
   }
   
@@ -383,92 +382,7 @@ document.addEventListener("pointerup", () => {
 });
 
 // ===== ECONOMIC CALENDAR =====
-// ===== ECONOMIC CALENDAR - SIMPLE WORKING VERSION =====
-function loadEconomicCalendar() {
-  console.log("🎯 loadEconomicCalendar() is executing!");
-  
-  // Find the calendar div
-  const calendarDiv = document.getElementById('economic-calendar');
-  console.log("Calendar div found:", calendarDiv);
-  
-  // If not found, show error
-  if (!calendarDiv) {
-    console.error("❌ ERROR: Cannot find #economic-calendar element!");
-    // Try to add it dynamically
-    const newDiv = document.createElement('div');
-    newDiv.id = 'economic-calendar';
-    newDiv.innerHTML = "<div style='color:orange; padding:20px;'>Calendar element was missing, but now fixed!</div>";
-    document.body.appendChild(newDiv);
-    return;
-  }
-  
-  // Simple data that always works
-  const events = [
-    { time: "13:30", currency: "USD", name: "CPI Data", impact: "High" },
-    { time: "14:00", currency: "EUR", name: "ECB Statement", impact: "Medium" },
-    { time: "15:00", currency: "GBP", name: "Retail Sales", impact: "Medium" }
-  ];
-  
-  // Build HTML
-  let html = '<div style="margin-bottom:15px; color:#8b949e;">📅 Today\'s Events</div>';
-  
-  events.forEach(event => {
-    html += `
-      <div style="
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-        border-bottom: 1px solid #30363d;
-      ">
-        <div>
-          <span style="
-            background: #21262d;
-            padding: 4px 10px;
-            border-radius: 6px;
-            margin-right: 10px;
-          ">${event.currency}</span>
-          ${event.name}
-        </div>
-        <div>
-          <span style="color:#8b949e;">${event.time} UTC</span>
-          <span style="
-            color: ${event.impact === 'High' ? '#f85149' : '#f0b90b'};
-            margin-left: 10px;
-            font-weight: bold;
-          ">${event.impact}</span>
-        </div>
-      </div>
-    `;
-  });
-  
-  // Update the div
-  calendarDiv.innerHTML = html;
-  console.log("✅ Calendar updated successfully!");
-}
-
-
-// ===== FORCE CALENDAR TO LOAD =====
-console.log("Forcing calendar load...");
-
-// Method 1: Try immediately
-try {
-  loadEconomicCalendar();
-} catch (error) {
-  console.error("Error loading calendar:", error);
-}
-
-// Method 2: Try after a short delay (500ms)
-setTimeout(() => {
-  console.log("Trying calendar load again after delay...");
-  loadEconomicCalendar();
-}, 500);
-
-// Method 3: Try when page is fully loaded
-window.addEventListener('load', () => {
-  console.log("Page fully loaded, loading calendar...");
-  loadEconomicCalendar();
-});
-
+ 
 
 
 // ===== AUTO-START EVERYTHING =====
@@ -490,7 +404,7 @@ function startApp() {
     render();
     updateMostActiveSession();
     checkWeekend();
-    
+ 
     
     
     // Set up auto-refresh every minute
@@ -503,7 +417,7 @@ function startApp() {
         renderTimeline();
         updateMostActiveSession();
         checkWeekend();
-        updateQuickStatus();
+       
     }, 60000);
     
     console.log("✅ All features started successfully!");
