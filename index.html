@@ -67,32 +67,44 @@
 </script>
 
 
-<h2>Live Forex Sessions</h2>
-<button id="toggleTime">Show Local Time</button>
-<button id="shareBtn"> Share This Tool</button>
-
+<h1>Live Forex Sessions</h1>
+<button id="toggleTime" style="background:orange; color:black" ;>Show Local Time</button>
+ <button id="shareBtn" style="background:#19bbff; color:black" > Share </button>
+<button id="shareBtn" style="background:#19bbff; color:black" > 
+<a href="https://paypal.me/manjurahmedbogee/100">Buy me a coffee!! </a>
+</button>
 <div id="utc"></div>
 
 <!-- Add to your timeline section -->
-<div style="margin: 15px 0; padding: 10px; background: #161b22; border-radius: 8px;">
+<div id="tips" style="margin: 15px 0; padding: 10px; background: #161b22; border-radius: 8px; font-size:15px;">
   <strong>💡 Trading Tip:</strong> The <span style="color:#f0b90b">London-New York overlap</span> 
   (13:00-17:00 UTC) typically has the highest liquidity and tightest spreads.
 </div>
+
 <div id="timeline"></div>
 <!-- Add these inside timeline or after it -->
 <div id="now-label" style="position:absolute; top:-20px; color:#f85149; font-size:12px;"></div>
+<h1>📅 Today's Major Economic Events</h1>
 
-
-<h2>📅 Today's Major Economic Events</h2>
-<div id="economic-calendar">
-  <div class="calendar-loading">
-    <div class="loading-spinner"></div>
-    Loading today's economic events...
+<div id="economic-calendar-container" style="background-color: #21262d; border-radius: 12px; padding: 10px;">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+    {
+      "colorTheme": "dark",
+      "isTransparent": true,
+      "width": "100%",
+      "height": "500",
+      "locale": "en",
+      "importanceFilter": "0,1",
+      "currencyFilter": "USD,EUR,GBP,JPY,AUD,CAD,CHF,NZD"
+    }
+    </script>
   </div>
 </div>
 
-
-<h2>FAQ – Frequently Asked Questions</h2>
+</div>
+<h1 >FAQ – Frequently Asked Questions</h1>
 <div id="faq">
   <div class="faq-item">
     <button class="faq-question">What are Forex sessions?</button>
@@ -110,6 +122,18 @@
     <button class="faq-question">Can I view sessions in my local time?</button>
     <div class="faq-answer">Yes! Click the "Show Local Time" button above to convert UTC session times to your local timezone.</div>
   </div>
+
+ <div class="faq-item">
+    <button class="faq-question">What is Major Economic Events?</button>
+    <div class="faq-answer">It is the events that affects market movements.</div>
+  </div>
+
+ <div class="faq-item">
+    <button class="faq-question">How to use  Economic Events in my trading?</button>
+    <div class="faq-answer">You can use these tools to get in or get out of the market depending on your analysis .</div>
+  </div>
+
+
 </div>
 <!-- Native In-Article Ad -->
 
@@ -126,3 +150,4 @@
 
 </body>
 </html>
+
