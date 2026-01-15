@@ -3,31 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About – KillZone FX</title>
+<title>About KillZone FX</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <header class="header">
   <div class="logo">KillZone FX</div>
-  <nav class="nav-menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="contact.html">Contact</a>
+  <nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <div class="nav-menu" id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="beginner-guide.html">Beginner's Guide</a>
+      <a href="about.html" class="active">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      
+    </div>
   </nav>
+  <button id="themeToggle">🌙 Dark Mode</button>
 </header>
 
-<h1>About KillZone FX</h1>
-<p>KillZone FX is a live Forex market tracker designed for traders of all levels. Our goal is to provide real-time trading session information, economic events, and actionable tips to help you make smarter trading decisions.</p>
-<p>This site is maintained independently and is continuously updated to reflect current market conditions. We also aim to educate traders on session overlaps, liquidity, and volatility patterns.</p>
+<main style="max-width:900px; margin:auto; padding:20px; line-height:1.7;">
+  <h1>About KillZone FX</h1>
+
+  <p>Welcome to KillZone FX, your comprehensive tool and resource hub for understanding Forex trading, market sessions, and economic events. Our mission is to empower traders, both beginners and experienced, by providing accurate, real-time, and user-friendly tools along with educational resources to help you make informed trading decisions.</p>
+
+  <h2>Our Story</h2>
+  <p>KillZone FX was created out of a need for a simple, accessible, and informative platform for Forex enthusiasts. While there are many complex trading tools and platforms available, we noticed that beginners often struggle with understanding market hours, session overlaps, and economic events that impact currency trading. We wanted to create a platform that combines practical tools with clear educational content, making Forex trading more approachable for everyone.</p>
+
+  <h2>What We Offer</h2>
+  <p>Our website provides a variety of tools and resources designed to help traders stay ahead in the Forex market:</p>
+  <ul>
+    <li><strong>Live Forex Market Hours & Trading Sessions:</strong> Get real-time data on the opening and closing times of major Forex markets worldwide, including Sydney, Tokyo, London, and New York. Visual session timelines help you see overlaps and peak trading periods at a glance.</li>
+    <li><strong>Economic Calendar:</strong> Track important economic events that influence the Forex market, with a focus on major currencies like USD, EUR, GBP, JPY, AUD, CAD, CHF, and NZD.</li>
+    <li><strong>Trading Tips & Beginner Guides:</strong> Access educational content that teaches you the fundamentals of Forex trading, how to analyze sessions, and strategies to manage risks effectively.</li>
+    <li><strong>User-Friendly Interface:</strong> We prioritize simplicity and clarity, making it easy for anyone to navigate our tools, read guides, and track the Forex market efficiently.</li>
+  </ul>
+
+  <h2>Our Mission</h2>
+  <p>At KillZone FX, our mission is to make Forex trading understandable and accessible. We aim to remove unnecessary complexity and give traders the tools they need to make informed decisions. We want to bridge the gap between beginners and experienced traders by providing a reliable and straightforward platform.</p>
+
+  <h2>Our Vision</h2>
+  <p>We envision a world where anyone interested in Forex trading can have access to accurate information, practical tools, and educational resources — all in one place. KillZone FX strives to be the go-to platform for Forex market hours, session timelines, and trading education, helping users build confidence and achieve their trading goals.</p>
+
+  <h2>Why Choose KillZone FX?</h2>
+  <ul>
+    <li><strong>Real-Time Data:</strong> All session timings and economic events are updated in real-time, ensuring you have the most accurate information.</li>
+    <li><strong>Educational Resources:</strong> We provide beginner-friendly guides and tips to help you understand the market and trading principles.</li>
+    <li><strong>User-Centric Design:</strong> Our website is designed with simplicity and accessibility in mind, so both beginners and experienced traders can navigate easily.</li>
+    <li><strong>Privacy and Security:</strong> We respect your privacy and follow best practices to ensure your data is safe. Learn more on our <a href="privacy.html">Privacy Policy</a> page.</li>
+  </ul>
+
+  <h2>Our Commitment</h2>
+  <p>We are committed to continuously improving KillZone FX. We listen to user feedback, update tools and resources, and strive to provide the best possible experience for our visitors. Our commitment is to transparency, accuracy, and usability, so you can trust our platform for your trading journey.</p>
+
+  <h2>Get Involved</h2>
+  <p>We encourage our users to provide feedback, share ideas, and participate in our community. Whether you are a beginner looking to learn or an experienced trader seeking reliable tools, KillZone FX is built for you. You can contact us anytime via email at <a href="mailto:support@killzonefx.netlify.app">support@killzonefx.netlify.app</a> for questions, suggestions, or support.</p>
+
+  <h2>Conclusion</h2>
+  <p>KillZone FX is more than just a tool — it is a learning and trading hub designed to simplify Forex trading, educate users, and provide real-time market information. Our goal is to help you trade smarter, understand market dynamics, and build confidence in your trading journey.</p>
+
+  <p>Thank you for choosing KillZone FX as your trusted Forex resource!</p>
+</main>
 
 <footer>
-  <a href="privacy.html" style="color:grey;">Privacy</a> |
-  <a href="disclaimer.html" style="color:grey;">Disclaimer</a> |
-  <a href="terms.html" style="color:grey;">Terms</a> |
-  <a href="contact.html" style="color:grey;">Contact</a>
+  <a href="privacy.html">Privacy</a> | 
+  <a href="terms.html">Terms</a> | 
+  <a href="about.html" class="active">About</a>
 </footer>
 
+<script>
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+</script>
 </body>
 </html>
