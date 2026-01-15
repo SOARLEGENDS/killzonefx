@@ -2,38 +2,86 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Terms of Service – KillZone</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Terms and conditions for using KillZone forex market session tracker.">
+<title>Terms & Conditions – KillZone FX</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header class="header">
+  <div class="logo">KillZone FX</div>
+  <nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <div class="nav-menu" id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html" class="active">Terms</a>
+      <a href="beginner-guide.html">Trading Guide</a>
+    </div>
+  </nav>
+  <button id="themeToggle">🌙 Dark Mode</button>
+</header>
 
-<h1>Terms of Service</h1>
+<main style="max-width:900px; margin:auto; padding:20px; line-height:1.7;">
+  <h1>Terms & Conditions</h1>
+  <p>Welcome to KillZone FX. By accessing or using our website, you agree to comply with the following Terms & Conditions. Please read them carefully before using our services.</p>
 
-<p>
-By using KillZone, you agree to these terms.
-</p>
+  <h2>1. Acceptance of Terms</h2>
+  <p>By accessing KillZone FX, you acknowledge that you have read, understood, and agreed to be bound by these Terms & Conditions. If you do not agree, you must not use our website or services.</p>
 
-<h2>Use of Content</h2>
-<p>
-All content is provided for informational purposes only and may not be copied
-or redistributed without permission.
-</p>
+  <h2>2. Use of the Website</h2>
+  <ul>
+    <li>You may use KillZone FX for personal, non-commercial purposes only.</li>
+    <li>You must not attempt to interfere with, disrupt, or misuse the website or any services provided.</li>
+    <li>You agree not to copy, reproduce, distribute, or create derivative works without our explicit permission.</li>
+  </ul>
 
-<h2>No Warranty</h2>
-<p>
-KillZone is provided “as is” without warranties of any kind.
-</p>
+  <h2>3. Intellectual Property</h2>
+  <p>All content, tools, graphics, logos, text, and code on KillZone FX are the property of KillZone FX and are protected by copyright, trademark, and other intellectual property laws. Unauthorized use is strictly prohibited.</p>
 
-<h2>Limitation of Liability</h2>
-<p>
-We are not responsible for losses or damages resulting from use of this website.
-</p>
+  <h2>4. Disclaimer of Warranties</h2>
+  <p>The tools, data, and information provided by KillZone FX are for educational and informational purposes only. We do not guarantee the accuracy, completeness, or timeliness of the information. Your use of this website is at your own risk.</p>
+
+  <h2>5. Limitation of Liability</h2>
+  <p>Under no circumstances shall KillZone FX, its owners, or affiliates be liable for any direct, indirect, incidental, consequential, or special damages arising from your use or inability to use the website, including but not limited to trading losses, financial loss, or other damages.</p>
+
+  <h2>6. External Links</h2>
+  <p>KillZone FX may contain links to third-party websites. We are not responsible for the content, accuracy, or privacy practices of external sites. Visiting these links is at your own risk.</p>
+
+  <h2>7. Privacy</h2>
+  <p>We respect your privacy. Please review our <a href="privacy.html">Privacy Policy</a> to understand how we collect, use, and protect your information.</p>
+
+  <h2>8. User Responsibility</h2>
+  <ul>
+    <li>You are responsible for your own actions and decisions when using our tools or information.</li>
+    <li>We strongly recommend using demo accounts for practice and understanding risks before trading with real money.</li>
+    <li>You agree to comply with all applicable laws in your jurisdiction when using our website.</li>
+  </ul>
+
+  <h2>9. Modifications to Terms</h2>
+  <p>KillZone FX reserves the right to modify or update these Terms & Conditions at any time. Changes will be posted on this page. Continued use of the website after changes constitutes acceptance of the updated terms.</p>
+
+  <h2>10. Governing Law</h2>
+  <p>These Terms & Conditions are governed by the laws of India. Any disputes arising from the use of this website shall be subject to the exclusive jurisdiction of courts in India.</p>
+
+  <h2>11. Contact Information</h2>
+  <p>If you have any questions or concerns regarding these Terms & Conditions, please contact us at: <a href="mailto:support@killzonefx.netlify.app">support@killzonefx.netlify.app</a></p>
+
+  <p><strong>By using KillZone FX, you acknowledge that you have read, understood, and agree to these Terms & Conditions.</strong></p>
+</main>
 
 <footer>
-  <a style="color:grey;" href="index.html">← Back to KillZone</a>
+  <a href="privacy.html">Privacy</a> | 
+  <a href="terms.html" class="active">Terms</a>
 </footer>
 
+<script>
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+</script>
 </body>
 </html>
