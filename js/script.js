@@ -429,3 +429,13 @@ document.getElementById('buyCoffeeBtn').addEventListener('click', function() {
   // Open the PayPal link in a new tab
   window.open('https://paypal.me/manjurahmedbogee', '_blank');
 });
+
+// FAQ Toggle
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+        item.classList.toggle('active');
+    });
+});
