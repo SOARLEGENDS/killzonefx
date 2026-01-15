@@ -4,58 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KillZone – Live Forex Market Hours & Trading Sessions</title>
-<meta name="description" content="KillZone shows live forex market hours, trading sessions, liquidity overlaps, and session timelines in UTC or local time.">
+<meta name="description" content="KillZone shows live forex market hours, trading sessions, liquidity overlaps, and session timelines in UTC or local time. Learn to trade smart with session timing insights.">
 <meta name="keywords" content="forex market hours, forex sessions, trading sessions, forex killzone, forex timeline, market open close">
 <meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="KHF015LHEq32jsxGlgcKBrPEuAKwUgTxoB9TASU1B2g" />
 <meta name="theme-color" content="#0d1117">
-<meta name="application-name" content="KillZone">
-<meta name="apple-mobile-web-app-title" content="KillZone">
-
-<meta name="google-adsense-account" content="ca-pub-8587197885982135" />
 
 <link rel="icon" sizes="32x32" href="icon-192.png">
 <link rel="icon" sizes="16x16" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
- <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8587197885982135"
-     crossorigin="anonymous"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QLYGFRXW6F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QLYGFRXW6F');
-</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8587197885982135" crossorigin="anonymous"></script>
 
 </head>
-
 <body>
 
+<!-- HEADER MENU -->
+<header class="header">
+  <div class="logo">KillZone FX</div>
+  <nav class="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
 <!-- DARK/LIGHT TOGGLE -->
-<div style="text-align: right; margin-bottom: 20px;">
+<div style="text-align: right; margin: 20px;">
   <button id="themeToggle">🌙 Dark Mode</button>
 </div>
 
 <h1>Forex Market Hours & Trading Sessions</h1>
 
-<!-- ADD THIS NEW BADGE HERE -->
+<!-- Active Session Badge -->
 <div id="active-badge">
   <span id="active-session-name">Sydney</span> is currently the most active session
 </div>
 
-<!-- WEEKEND NOTICE -->
+<!-- Weekend Notice -->
 <div id="weekend-notice" style="display: none;">
   ⚠️ Markets are limited on weekends. Major Forex trading resumes Sunday 22:00 UTC.
 </div>
+
 <div id="sessions"></div>
 
-<!-- Native In-Feed Ad -->
+<!-- AdSense In-Feed Ad -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-format="fluid"
@@ -66,26 +62,23 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
+<h2>Live Forex Sessions</h2>
+<button id="toggleTime" style="background:orange; color:black">Show Local Time</button>
+<button id="shareBtn" style="background:#19bbff; color:black">Share</button>
+<button id="buyCoffeeBtn" style="background:#19bbff; color:black">Buy me a coffee!!</button>
 
-<h1>Live Forex Sessions</h1>
-<button id="toggleTime" style="background:orange; color:black" ;>Show Local Time</button>
- <button id="shareBtn" style="background:#19bbff; color:black" > Share </button>
-<button id="buyCoffeeBtn" style="background:#19bbff; color:black" > 
-Buy me a coffee!! 
-</button>
 <div id="utc"></div>
 
-<!-- Add to your timeline section -->
+<!-- Tips Section -->
 <div id="tips" style="margin: 15px 0; padding: 10px; background: #161b22; border-radius: 8px; font-size:15px;">
-  <strong>💡 Trading Tip:</strong> The <span style="color:#f0b90b">London-New York overlap</span> 
-  (13:00-17:00 UTC) typically has the highest liquidity and tightest spreads.
+  <strong>💡 Trading Tip:</strong> The <span style="color:#f0b90b">London-New York overlap</span> (13:00-17:00 UTC) typically has the highest liquidity and tightest spreads. 
+  Check session timings daily to maximize trading efficiency.
 </div>
 
 <div id="timeline"></div>
-<!-- Add these inside timeline or after it -->
 <div id="now-label" style="position:absolute; top:-20px; color:#f85149; font-size:12px;"></div>
-<h1>📅 Today's Major Economic Events</h1>
 
+<h2>📅 Today's Major Economic Events</h2>
 <div id="economic-calendar-container" style="background-color: #21262d; border-radius: 12px; padding: 10px;">
   <div class="tradingview-widget-container">
     <div class="tradingview-widget-container__widget"></div>
@@ -103,50 +96,42 @@ Buy me a coffee!!
   </div>
 </div>
 
-</div>
-<h1 >FAQ – Frequently Asked Questions</h1>
+<h2>FAQ – Frequently Asked Questions</h2>
 <div id="faq">
   <div class="faq-item">
     <button class="faq-question">What are Forex sessions?</button>
-    <div class="faq-answer">Forex sessions are periods when major financial centers are open for trading. Each session has its own opening and closing hours.</div>
+    <div class="faq-answer">Forex sessions are periods when major financial centers are open for trading. Each session has its own opening and closing hours. Understanding these helps traders plan entries and exits effectively.</div>
   </div>
   <div class="faq-item">
     <button class="faq-question">Why do some sessions overlap?</button>
-    <div class="faq-answer">Overlaps occur when two markets are open simultaneously. This often increases liquidity and trading opportunities.</div>
+    <div class="faq-answer">Overlaps occur when two markets are open simultaneously. This often increases liquidity and trading opportunities. The London-New York overlap is particularly active.</div>
   </div>
   <div class="faq-item">
     <button class="faq-question">Does this account for DST?</button>
-    <div class="faq-answer">Currently, DST is not active. When implemented, session hours will automatically adjust by +1 hour during DST periods.</div>
+    <div class="faq-answer">Currently, DST is not active. When implemented, session hours will automatically adjust by +1 hour during DST periods. This ensures accurate timing year-round.</div>
   </div>
   <div class="faq-item">
     <button class="faq-question">Can I view sessions in my local time?</button>
-    <div class="faq-answer">Yes! Click the "Show Local Time" button above to convert UTC session times to your local timezone.</div>
+    <div class="faq-answer">Yes! Click the "Show Local Time" button above to convert UTC session times to your local timezone for convenience.</div>
   </div>
-
- <div class="faq-item">
-    <button class="faq-question">What is Major Economic Events?</button>
-    <div class="faq-answer">It is the events that affects market movements.</div>
+  <div class="faq-item">
+    <button class="faq-question">What are Major Economic Events?</button>
+    <div class="faq-answer">These are scheduled events that significantly affect market movements. Examples include interest rate decisions, GDP reports, and employment data.</div>
   </div>
-
- <div class="faq-item">
-    <button class="faq-question">How to use  Economic Events in my trading?</button>
-    <div class="faq-answer">You can use these tools to get in or get out of the market depending on your analysis .</div>
+  <div class="faq-item">
+    <button class="faq-question">How to use Economic Events in my trading?</button>
+    <div class="faq-answer">Traders can use economic events to anticipate market volatility. Plan your trades accordingly and avoid high-risk periods if uncertain.</div>
   </div>
-
-
 </div>
-<!-- Native In-Article Ad -->
 
+<!-- Footer -->
 <footer>
-  <a style="color:grey;" href="privacy.html">Privacy</a> |
- <a style="color:grey;" href="disclaimer.html">Disclaimer</a> |
-
-  <a style="color:grey;" href="terms.html">Terms</a> |
-  <a style="color:grey;" href="https://docs.google.com/forms/d/e/1FAIpQLScVQyu6HmpcOEWCUMAPDJR-vqKfVCUGyUPVYaLRCTdVzXfWDQ/viewform?usp=header">Feedback</a>
+  <a href="privacy.html" style="color:grey;">Privacy</a> |
+  <a href="disclaimer.html" style="color:grey;">Disclaimer</a> |
+  <a href="terms.html" style="color:grey;">Terms</a> |
+  <a href="contact.html" style="color:grey;">Contact</a>
 </footer>
 
-
 <script src="js/script.js"></script>
-
 </body>
 </html>
