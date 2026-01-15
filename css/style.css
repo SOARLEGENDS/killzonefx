@@ -674,41 +674,66 @@ button:hover {
 }
 
 /* ========== HEADER MENU ========== */
+/* ===== NAVIGATION MENU FIX FOR KILLZONE FX ===== */
 .header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1e1e1e;
-    padding: 12px 24px;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #0d1117; /* matches your page bg */
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #21262d;
+  z-index: 1000;
 }
 
 .header .logo {
-    font-weight: bold;
-    font-size: 1.3rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #f0b90b; /* your gold accent */
 }
 
 .nav-menu {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 22px;
 }
 
 .nav-menu a {
-    color: #e6edf3;
-    text-decoration: none;
-    font-size: 0.95rem;
-    padding: 6px 10px;
-    border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
+  color: #cdd9e5;           /* softer light text */
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
 }
 
-.nav-menu a:hover {
-    background-color: #2a2a2a;
-    color: #f0b90b;
+.nav-menu a:hover,
+.nav-menu a:focus {
+  color: #ffffff;           /* bright on hover */
+  background: #161b22;       /* dark highlight */
+}
+
+.nav-menu a.active {
+  color: #f0b90b;           /* gold for active page */
+  font-weight: 600;
+  text-decoration: underline 2px solid #f0b90b;
+}
+
+/* Dark Mode toggle alignment */
+#themeToggle {
+  background: transparent;
+  color: #cdd9e5;
+  border: 1px solid #30363d;
+  font-size: 0.88rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+#themeToggle:hover {
+  background: #21262d;
+  color: #f0b90b;
 }
 
 /* ========== SESSION & TIMELINE ========== */
@@ -935,3 +960,4 @@ body.light-mode #weekend-notice { background: rgba(255, 149, 0, 0.15); color: #d
     .header { flex-direction: column; align-items: flex-start; }
     .session { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
+
