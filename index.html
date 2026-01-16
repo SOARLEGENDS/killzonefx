@@ -135,8 +135,17 @@
 </footer>
 
 <script src="js/script.js"></script>
+  <script>
+  document.querySelectorAll(".faq-question").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
