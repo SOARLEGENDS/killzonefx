@@ -271,14 +271,7 @@ function updateClock() {
 setInterval(updateClock, 1000);
 
 
-// ===== FAQ TOGGLE =====
 
-
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.parentElement.classList.toggle('active');
-  });
-});
 
 // ===== UPDATE MOST ACTIVE SESSION =====
 function updateMostActiveSession() {
@@ -439,6 +432,7 @@ faqItems.forEach(item => {
         item.classList.toggle('active');
     });
 });
+// ===== FAQ TOGGLE =====
 
 // Hamburger menu toggle
 const hamburger = document.getElementById('hamburger');
@@ -447,3 +441,4 @@ const navMenu = document.getElementById('nav-menu');
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('show');
 });
+
