@@ -423,22 +423,25 @@ document.getElementById('buyCoffeeBtn').addEventListener('click', function() {
   window.open('https://paypal.me/manjurahmedbogee', '_blank');
 });
 
-// FAQ Toggle
-const faqItems = document.querySelectorAll('.faq-item');
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
 
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-        item.classList.toggle('active');
+    faqItems.forEach(item => {
+      const question = item.querySelector(".faq-question");
+      
+      question.addEventListener("click", () => {
+        // Close any open FAQ except the current one
+        faqItems.forEach(i => {
+          if (i !== item) i.classList.remove("active");
+        });
+
+        // Toggle current
+        item.classList.toggle("active");
+      });
     });
-});
-// ===== FAQ TOGGLE =====
+  });
+</script>
 
-// Hamburger menu toggle
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-});
 
