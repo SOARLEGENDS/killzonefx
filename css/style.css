@@ -229,7 +229,7 @@ footer {
 .faq-answer {
   max-height: 0;         /* collapsed */
   overflow: hidden;
-  transition: max-height 0.1s ease, padding 0.3s ease;
+  transition: max-height 0.1s ease, padding 0.2s ease;
   padding: 0 12px;       /* top/bottom padding will be added when expanded */
 }
 
@@ -1004,3 +1004,4 @@ body.light-mode #weekend-notice { background: rgba(255, 149, 0, 0.15); color: #d
   0% { opacity: 0; transform: translateY(-10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
