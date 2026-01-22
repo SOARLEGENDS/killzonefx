@@ -3,27 +3,51 @@
 
   <url>
     <loc>https://killzonefx.netlify.app/</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://killzonefx.netlify.app/about.html</loc>
+    <loc>https://killzonefx.netlify.app/beginner's-guide</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://killzonefx.netlify.app/privacy.html</loc>
+    <loc>https://killzonefx.netlify.app/about</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://killzonefx.netlify.app/terms.html</loc>
-    <priority>0.5</priority>
+    <loc>https://killzonefx.netlify.app/privacy</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 
   <url>
-    <loc>https://killzonefx.netlify.app/disclaimer.html</loc>
-    <priority>0.7</priority>
+    <loc>https://killzonefx.netlify.app/contact</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://killzonefx.netlify.app/terms-and-conditions</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://killzonefx.netlify.app/blog</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
